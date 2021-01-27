@@ -5,8 +5,85 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CalculadoraWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="CALCULADORA" Icon  ="C:\Users\Usuario\Documents\C#\WpfApp1\WpfApp1\calculadora.png"  Height="500" Width="360">
+    <Grid Background="DarkGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="51"></RowDefinition>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="2" Margin="10,10">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="4"></ColumnDefinition>
+
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="4"></ColumnDefinition>
+
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="4"></ColumnDefinition>
+
+                <ColumnDefinition Width="*"></ColumnDefinition>
+
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="4"></RowDefinition>
+
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="4"></RowDefinition>
+
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="4"></RowDefinition>
+
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="4"></RowDefinition>
+
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="4"></RowDefinition>
+
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Foreground="Gray" FontSize="30">n!</Button>
+            <Button Grid.Column="0" Grid.Row="2" Foreground="Gray" FontSize="30">CE</Button>
+            <Button Grid.Column="0" Grid.Row="4" Foreground="Gray" FontSize="30">7</Button>
+            <Button Grid.Column="0" Grid.Row="6" Foreground="Gray" FontSize="30">4</Button>
+            <Button Grid.Column="0" Grid.Row="8" Foreground="Gray" FontSize="30">1</Button>
+            <Button Grid.Column="0" Grid.Row="10" Foreground="Gray" FontSize="30">±</Button>
+
+            <Button Grid.Column="2" Grid.Row="0" Foreground="Gray" FontSize="30">.nf.</Button>
+            <Button Grid.Column="2" Grid.Row="2" Foreground="Gray" FontSize="30">C</Button>
+            <Button Grid.Column="2" Grid.Row="4" Foreground="Gray" FontSize="30">8</Button>
+            <Button Grid.Column="2" Grid.Row="6" Foreground="Gray" FontSize="30">5</Button>
+            <Button Grid.Column="2" Grid.Row="8" Foreground="Gray" FontSize="30">2</Button>
+            <Button Grid.Column="2" Grid.Row="10" Foreground="Gray" FontSize="30">0</Button>
+
+            <Button Grid.Column="4" Grid.Row="0" Foreground="Gray" FontSize="30">n/x?</Button>
+            <Button Grid.Column="4" Grid.Row="2" Foreground="Gray" FontSize="30">←</Button>
+            <Button Grid.Column="4" Grid.Row="4" Foreground="Gray" FontSize="30">9</Button>
+            <Button Grid.Column="4" Grid.Row="6" Foreground="Gray" FontSize="30">6</Button>
+            <Button Grid.Column="4" Grid.Row="8" Foreground="Gray" FontSize="30">3</Button>
+            <Button Grid.Column="4" Grid.Row="10" Foreground="Gray" FontSize="30">.</Button>
+
+
+            <Button Grid.Column="6" Grid.Row="0" Foreground="Gray" FontSize="30">0112..</Button>
+            <Button Grid.Column="6" Grid.Row="2" Foreground="Gray" FontSize="30">÷</Button>
+            <Button Grid.Column="6" Grid.Row="4" Foreground="Gray" FontSize="30">x</Button>
+            <Button Grid.Column="6" Grid.Row="6" Foreground="Gray" FontSize="30">-</Button>
+            <Button Grid.Column="6" Grid.Row="8" Foreground="Gray" FontSize="30">+</Button>
+            <Button Grid.Column="6" Grid.Row="10" Foreground="Gray" FontSize="30">=</Button>
+        </Grid>
+        <TextBox HorizontalAlignment="Left" FontWeight="Bold" FontSize="25" BorderBrush="DarkSlateGray"  TextAlignment="Right" Height="34" Margin="23,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="309"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="3444" FontSize="20" TextAlignment="Right" Height="30" Width="332"/>
+
+
     </Grid>
 </Window>
