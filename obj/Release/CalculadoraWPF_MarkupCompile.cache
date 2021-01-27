@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\Usuario\Documents\C#\CalculadoraWPF\obj\Debug\
+C:\Users\Usuario\Documents\C#\CalculadoraWPF\obj\Release\
 CalculadoraWPF
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\Usuario\Documents\C#\CalculadoraWPF\App.xaml
 11151548125
 

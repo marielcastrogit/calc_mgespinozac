@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Title="CALCULADORA" Icon  ="C:\Users\Usuario\Documents\C#\WpfApp1\WpfApp1\calculadora.png"  Height="500" Width="360">
+        Title="CALCULADORA" Icon  ="C:\Users\Usuario\Documents\C#\CalculadoraWPF\imagenes\calculadora.png"  Height="500" Width="360">
     <Grid Background="DarkGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
