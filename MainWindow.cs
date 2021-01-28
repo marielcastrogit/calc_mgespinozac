@@ -25,14 +25,10 @@ namespace CalculadoraWPF
         public MainWindow()
         {
             InitializeComponent();
-            OperacionesAritmeticas op = new OperacionesAritmeticas();
-            try
-            {
-                txtBox.Text = "3.2+3.4";
-                Console.WriteLine(op.getSuma(op.getTerminos(txtBox)));
-                Console.Read();
-            }
-            catch (IOException) { Console.WriteLine("error"); }
+            OperacionesComplejas oc = new OperacionesComplejas();
+            oc.serieFibonacci(2);
+            oc.imprimeSerie();
+            
         }
 
         

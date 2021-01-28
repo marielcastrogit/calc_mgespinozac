@@ -45,7 +45,6 @@ namespace CalculadoraWPF
                     if (puntos[i].Equals('.'))
                     {
                         punto++;
-
                     }
                 }
             }
