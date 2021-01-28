@@ -22,12 +22,11 @@ namespace CalculadoraWPF
         public void serieFibonacci(int numero)
         {
 
-
-            if (numero >= 2 && numero <= 100)
+            int contador = 2;
+            while (contador <= numero)
             {
-                serie.Add(serie[numero-1] + serie[numero-2]);
-                serieFibonacci(numero = numero + 1);
-
+                serie.Add(serie[contador - 1] + serie[contador - 2]);
+                contador++;
             }
 
             

@@ -26,7 +26,7 @@ namespace CalculadoraWPF
         {
             InitializeComponent();
             OperacionesComplejas oc = new OperacionesComplejas();
-            oc.serieFibonacci(2);
+            oc.serieFibonacci(15);
             oc.imprimeSerie();
             
         }
