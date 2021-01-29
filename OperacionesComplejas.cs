@@ -1,32 +1,29 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ThirdParty.BouncyCastle.Math;
+using System.Numerics;
 
 namespace CalculadoraWPF
 {
     class OperacionesComplejas
     {
-        List<long> serie;
+        List<BigInteger> serie;
         public OperacionesComplejas()
         {
-            serie = new List<long>();
+            serie = new List<BigInteger>();
             serie.Add(0);
             serie.Add(1);
 
         }
 
-        public long getEnesimoTermino(int numero)
+        public BigInteger getEnesimoTermino(BigInteger numero)
         {
             setSerieFibonacci(numero);
-            return serie[numero - 1] + serie[numero - 2];
+            int posicion = int.Parse(numero.ToString());
+            return serie[posicion-1] + serie[posicion - 2];
 
         }
 
-        public void setSerieFibonacci(int numero)
+        public void setSerieFibonacci(BigInteger numero)
         {
             int contador = 2;
             while (contador <= numero)
@@ -48,7 +45,7 @@ namespace CalculadoraWPF
             return series;
         }
 
-        public bool esPrimo(int numero)
+        public bool esPrimo(BigInteger numero)
         {
             //Obtengo los divisores del numero 
             int divisores = 0; 
@@ -68,16 +65,15 @@ namespace CalculadoraWPF
             }
         }
 
-        public int getFactorial(int numero)
+        public BigInteger getFactorial(BigInteger numero)
         {
-            int factorial = 1;
-
-            for(int i = 1; i<=numero; i++)
+            BigInteger factorial = 1;
+            for (int i = 1; i <= numero; i++)
             {
                 factorial = factorial * i;
             }
-
             return factorial;
+
         }
 
 

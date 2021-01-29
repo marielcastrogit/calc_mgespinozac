@@ -39,6 +39,11 @@ namespace CalculadoraWPF
             DataObject.AddPastingHandler(txtBox, c.cancelarComando);
 
             //Estableciendo el control para los botones
+            //Botones con operaciones especiales:
+            factorial.Click += new RoutedEventHandler(c.controlarBotones);
+            enesimoTerminoFibo.Click += new RoutedEventHandler(c.controlarBotones);
+            esPrimo.Click += new RoutedEventHandler(c.controlarBotones);
+            desplegarSerie.Click += new RoutedEventHandler(c.controlarBotones);
 
         }
        

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -56,6 +57,67 @@ namespace CalculadoraWPF
                 e.CancelCommand();
             }
 
+        }
+
+
+        public void controlarBotones(object sender, RoutedEventArgs e)
+        {
+            OperacionesComplejas oc = new OperacionesComplejas();
+             BigInteger num = BigInteger.Parse(window.txtBox.Text);
+            
+
+            if (e.Source == window.factorial)
+            {
+                try
+                {
+
+                    window.txtBlock.Text = (oc.getFactorial(num).ToString());
+                }
+                catch (FormatException) { }
+            }
+
+            if(e.Source == window.enesimoTerminoFibo)
+            {
+                try
+                {
+                    window.txtBlock.Text = oc.getEnesimoTermino(num).ToString();
+                }
+                catch (FormatException) { }
+            }
+
+            if (e.Source == window.esPrimo)
+            {
+                try
+                {
+                    window.txtBlock.Text = oc.esPrimo(num).ToString();
+                }
+                catch (FormatException) { }
+            }
+
+            if (e.Source == window.desplegarSerie)
+            {
+                try
+                {
+                    oc.setSerieFibonacci(num);
+                    MessageBox.Show(oc.getSerieFibonacci());
+                }
+                catch (FormatException) { }
+            }
+
+            if (e.Source == window)
+            {
+
+            }
+
+            if (e.Source == window)
+            {
+
+            }
+
+            if (e.Source == window)
+            {
+
+            }
         }
     }
 }
