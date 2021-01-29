@@ -81,7 +81,7 @@
             <Button Grid.Column="6" Grid.Row="8" Foreground="Gray" FontSize="30">+</Button>
             <Button Grid.Column="6" Grid.Row="10" Foreground="Gray" FontSize="30">=</Button>
         </Grid>
-        <TextBox Name ="txtBox" HorizontalAlignment="Left" FontWeight="Bold" FontSize="25" BorderBrush="DarkSlateGray"  TextAlignment="Right" Height="34" Margin="23,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="309"/>
+        <TextBox Name ="txtBox"  HorizontalAlignment="Left" FontWeight="Bold"  FontSize="25" BorderBrush="DarkSlateGray"  TextAlignment="Right" Height="34" Margin="23,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="309"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="3444" FontSize="20" TextAlignment="Right" Height="30" Width="332"/>
     </Grid>
 </Window>

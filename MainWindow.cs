@@ -22,11 +22,17 @@ namespace CalculadoraWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Controlador c;
         public MainWindow()
         {
             InitializeComponent();
-            OperacionesComplejas oc = new OperacionesComplejas();
-            oc.setSerieFibonacci(15);
+            setControllers();
+        }
+
+        private void setControllers()
+        {
+            c = new Controlador(this);
+            txtBox.PreviewTextInput += new TextCompositionEventHandler(c.validarTeclado);
         }
 
         
