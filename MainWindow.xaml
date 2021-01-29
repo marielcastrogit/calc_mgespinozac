@@ -18,7 +18,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Column="0" Grid.Row="2" Margin="10,10">
+        <Grid Grid.Column="0" Grid.Row="2" Margin="10,10" >
             <Grid.ColumnDefinitions >
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="4"></ColumnDefinition>
@@ -52,36 +52,36 @@
 
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Grid.Column="0" Grid.Row="0" Foreground="Gray" FontSize="30">n!</Button>
-            <Button Grid.Column="0" Grid.Row="2" Foreground="Gray" FontSize="30">CE</Button>
-            <Button Grid.Column="0" Grid.Row="4" Foreground="Gray" FontSize="30">7</Button>
-            <Button Grid.Column="0" Grid.Row="6" Foreground="Gray" FontSize="30">4</Button>
-            <Button Grid.Column="0" Grid.Row="8" Foreground="Gray" FontSize="30">1</Button>
-            <Button Grid.Column="0" Grid.Row="10" Foreground="Gray" FontSize="30">±</Button>
+            <Button Name="factorial" Grid.Column="0" Grid.Row="0" Foreground="Gray" FontSize="30">n!</Button>
+            <Button Name="borrarReciente" Grid.Column="0" Grid.Row="2" Foreground="Gray" FontSize="30">CE</Button>
+            <Button Name="num7" Grid.Column="0" Grid.Row="4" Foreground="Gray" FontSize="30">7</Button>
+            <Button Name="num4" Grid.Column="0" Grid.Row="6" Foreground="Gray" FontSize="30">4</Button>
+            <Button Name="num1" Grid.Column="0" Grid.Row="8" Foreground="Gray" FontSize="30">1</Button>
+            <Button Name="signoMasMenos" Grid.Column="0" Grid.Row="10" Foreground="Gray" FontSize="30">±</Button>
 
-            <Button Grid.Column="2" Grid.Row="0" Foreground="Gray" FontSize="30">.nf.</Button>
-            <Button Grid.Column="2" Grid.Row="2" Foreground="Gray" FontSize="30">C</Button>
-            <Button Grid.Column="2" Grid.Row="4" Foreground="Gray" FontSize="30">8</Button>
-            <Button Grid.Column="2" Grid.Row="6" Foreground="Gray" FontSize="30">5</Button>
-            <Button Grid.Column="2" Grid.Row="8" Foreground="Gray" FontSize="30">2</Button>
-            <Button Grid.Column="2" Grid.Row="10" Foreground="Gray" FontSize="30">0</Button>
+            <Button Name="enesimoTerminoFibo" Grid.Column="2" Grid.Row="0" Foreground="Gray" FontSize="30">.nf.</Button>
+            <Button Name="borrarTodo" Grid.Column="2" Grid.Row="2" Foreground="Gray" FontSize="30">C</Button>
+            <Button Name="num8" Grid.Column="2" Grid.Row="4" Foreground="Gray" FontSize="30">8</Button>
+            <Button Name="num5" Grid.Column="2" Grid.Row="6" Foreground="Gray" FontSize="30">5</Button>
+            <Button Name="num2" Grid.Column="2" Grid.Row="8" Foreground="Gray" FontSize="30">2</Button>
+            <Button Name="num0" Grid.Column="2" Grid.Row="10" Foreground="Gray" FontSize="30">0</Button>
 
-            <Button Grid.Column="4" Grid.Row="0" Foreground="Gray" FontSize="30">n/x?</Button>
-            <Button Grid.Column="4" Grid.Row="2" Foreground="Gray" FontSize="30">←</Button>
-            <Button Grid.Column="4" Grid.Row="4" Foreground="Gray" FontSize="30">9</Button>
-            <Button Grid.Column="4" Grid.Row="6" Foreground="Gray" FontSize="30">6</Button>
-            <Button Grid.Column="4" Grid.Row="8" Foreground="Gray" FontSize="30">3</Button>
-            <Button Grid.Column="4" Grid.Row="10" Foreground="Gray" FontSize="30">.</Button>
+            <Button Name="esPrimo" Grid.Column="4" Grid.Row="0" Foreground="Gray" FontSize="30">n/x?</Button>
+            <Button Name="borrarUltimoDigito" Grid.Column="4" Grid.Row="2" Foreground="Gray" FontSize="30">←</Button>
+            <Button Name="num9" Grid.Column="4" Grid.Row="4" Foreground="Gray" FontSize="30">9</Button>
+            <Button Name="num6" Grid.Column="4" Grid.Row="6" Foreground="Gray" FontSize="30">6</Button>
+            <Button Name="num3" Grid.Column="4" Grid.Row="8" Foreground="Gray" FontSize="30">3</Button>
+            <Button Name="punto" Grid.Column="4" Grid.Row="10" Foreground="Gray" FontSize="30">.</Button>
 
 
-            <Button Grid.Column="6" Grid.Row="0" Foreground="Gray" FontSize="30">0112..</Button>
-            <Button Grid.Column="6" Grid.Row="2" Foreground="Gray" FontSize="30">÷</Button>
-            <Button Grid.Column="6" Grid.Row="4" Foreground="Gray" FontSize="30">x</Button>
-            <Button Grid.Column="6" Grid.Row="6" Foreground="Gray" FontSize="30">-</Button>
-            <Button Grid.Column="6" Grid.Row="8" Foreground="Gray" FontSize="30">+</Button>
-            <Button Grid.Column="6" Grid.Row="10" Foreground="Gray" FontSize="30">=</Button>
+            <Button Name="desplegarSerie" Grid.Column="6" Grid.Row="0" Foreground="Gray" FontSize="30">0112..</Button>
+            <Button Name="dividir" Grid.Column="6" Grid.Row="2" Foreground="Gray" FontSize="30">÷</Button>
+            <Button Name="multiplicar" Grid.Column="6" Grid.Row="4" Foreground="Gray" FontSize="30">x</Button>
+            <Button Name="restar" Grid.Column="6" Grid.Row="6" Foreground="Gray" FontSize="30">-</Button>
+            <Button Name="sumar" Grid.Column="6" Grid.Row="8" Foreground="Gray" FontSize="30">+</Button>
+            <Button Name="igual" Grid.Column="6" Grid.Row="10" Foreground="Gray" FontSize="30">=</Button>
         </Grid>
-        <TextBox Name ="txtBox"  HorizontalAlignment="Left" FontWeight="Bold"  FontSize="25" BorderBrush="DarkSlateGray"  TextAlignment="Right" Height="34" Margin="23,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="309"/>
+        <TextBox Name ="txtBox" HorizontalAlignment="Left" FontWeight="Bold"  FontSize="25" BorderBrush="DarkSlateGray"  TextAlignment="Right" Height="34" Margin="23,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="309"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="3444" FontSize="20" TextAlignment="Right" Height="30" Width="332"/>
     </Grid>
 </Window>

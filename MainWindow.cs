@@ -33,8 +33,15 @@ namespace CalculadoraWPF
         {
             c = new Controlador(this);
             txtBox.PreviewTextInput += new TextCompositionEventHandler(c.validarTeclado);
-        }
 
-        
+            //Agregamos un controlador del comando pegar al textBox
+            //El elemento es el txtBox y el delegado de manipularlo es c.cancelarComando
+            DataObject.AddPastingHandler(txtBox, c.cancelarComando);
+
+            //Estableciendo el control para los botones
+
+        }
+       
+
     }
 }

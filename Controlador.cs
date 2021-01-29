@@ -43,6 +43,19 @@ namespace CalculadoraWPF
                     e.Handled = false;
                 }
             }
+
+        }
+
+        public void cancelarComando(object sender, DataObjectEventArgs e)
+        {
+
+            if (e.Source == window.txtBox) 
+            {
+                /*CancelComand() lo que hace es cancelar el comando de pegar para 
+                 que la caja de texto no pueda admitir letras*/
+                e.CancelCommand();
+            }
+
         }
     }
 }
