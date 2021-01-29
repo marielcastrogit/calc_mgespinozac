@@ -12,6 +12,8 @@ namespace CalculadoraWPF
     public class Controlador
     {
         MainWindow window;
+        String contenidoCaja = "";
+
         public Controlador(MainWindow window)
         {
             this.window = window;
@@ -30,14 +32,14 @@ namespace CalculadoraWPF
                 e.Handler = false -> continuar
                 */
                 string caracteres = e.Text;
-                char []caracter = caracteres.ToCharArray();
+                char[] caracter = caracteres.ToCharArray();
 
                 /*Segun el codigo ASCII para que sea una letra tiene que estar 
                  entre 32 y 64 o entre 58 y 255*/
-                
-                if ((caracter[0] >= 32 && caracter[0] <= 47) || (caracter[0]>=58 && caracter[0]<=255))
-                { 
-                    e.Handled = true; 
+
+                if ((caracter[0] >= 32 && caracter[0] <= 47) || (caracter[0] >= 58 && caracter[0] <= 255))
+                {
+                    e.Handled = true;
                 }
                 else
                 {
@@ -50,7 +52,7 @@ namespace CalculadoraWPF
         public void cancelarComando(object sender, DataObjectEventArgs e)
         {
 
-            if (e.Source == window.txtBox) 
+            if (e.Source == window.txtBox)
             {
                 /*CancelComand() lo que hace es cancelar el comando de pegar para 
                  que la caja de texto no pueda admitir letras*/
@@ -63,23 +65,26 @@ namespace CalculadoraWPF
         public void controlarBotones(object sender, RoutedEventArgs e)
         {
             OperacionesComplejas oc = new OperacionesComplejas();
-             BigInteger num = BigInteger.Parse(window.txtBox.Text);
-            
 
+
+            //Eventos para los botones de las operaciones complejas:
             if (e.Source == window.factorial)
             {
+
                 try
                 {
 
+                    BigInteger num = BigInteger.Parse(window.txtBox.Text);
                     window.txtBlock.Text = (oc.getFactorial(num).ToString());
                 }
                 catch (FormatException) { }
             }
 
-            if(e.Source == window.enesimoTerminoFibo)
+            if (e.Source == window.enesimoTerminoFibo)
             {
                 try
                 {
+                    BigInteger num = BigInteger.Parse(window.txtBox.Text);
                     window.txtBlock.Text = oc.getEnesimoTermino(num).ToString();
                 }
                 catch (FormatException) { }
@@ -89,6 +94,7 @@ namespace CalculadoraWPF
             {
                 try
                 {
+                    BigInteger num = BigInteger.Parse(window.txtBox.Text);
                     window.txtBlock.Text = oc.esPrimo(num).ToString();
                 }
                 catch (FormatException) { }
@@ -98,17 +104,71 @@ namespace CalculadoraWPF
             {
                 try
                 {
+                    BigInteger num = BigInteger.Parse(window.txtBox.Text);
                     oc.setSerieFibonacci(num);
                     MessageBox.Show(oc.getSerieFibonacci());
                 }
                 catch (FormatException) { }
             }
 
-            if (e.Source == window)
-            {
+            //Eventos para los botones que tienen numero:
+            Object o = e.Source; //o de origen del evento.
 
+
+            if (o == window.num0)
+            {
+                contenidoCaja += window.num0.Content.ToString();
             }
 
+            if (o == window.num1)
+            {
+                contenidoCaja += window.num1.Content.ToString();
+            }
+
+            if (o == window.num2)
+            {
+                contenidoCaja += window.num2.Content.ToString();
+            }
+
+            if (o == window.num3)
+            {
+                contenidoCaja += window.num3.Content.ToString();
+            }
+
+            if (o == window.num4)
+            {
+                contenidoCaja += window.num4.Content.ToString();
+            }
+
+            if (o == window.num5)
+            {
+                contenidoCaja += window.num5.Content.ToString();
+            }
+            
+
+            if (o == window.num6)
+            {
+                contenidoCaja += window.num6.Content.ToString();
+            }
+
+            if (o == window.num7)
+            {
+                contenidoCaja += window.num7.Content.ToString();
+            }
+
+            if (o == window.num8)
+            {
+                contenidoCaja += window.num8.Content.ToString();
+            }
+
+            if (o == window.num9)
+            {
+                contenidoCaja += window.num9.Content.ToString();
+
+            }
+            window.txtBox.Text = (contenidoCaja);
+
+            //Eventos para los botones que tienen signos de operaciones aritmeticas
             if (e.Source == window)
             {
 

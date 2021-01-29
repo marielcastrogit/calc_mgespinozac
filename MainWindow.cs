@@ -45,6 +45,21 @@ namespace CalculadoraWPF
             esPrimo.Click += new RoutedEventHandler(c.controlarBotones);
             desplegarSerie.Click += new RoutedEventHandler(c.controlarBotones);
 
+            //Botones que contienen numeros: 
+            num0.Click += new RoutedEventHandler(c.controlarBotones);
+            num1.Click += new RoutedEventHandler(c.controlarBotones);
+            num2.Click += new RoutedEventHandler(c.controlarBotones);
+            num3.Click += new RoutedEventHandler(c.controlarBotones);
+            num4.Click += new RoutedEventHandler(c.controlarBotones);
+            num5.Click += new RoutedEventHandler(c.controlarBotones);
+            num6.Click += new RoutedEventHandler(c.controlarBotones);
+            num7.Click += new RoutedEventHandler(c.controlarBotones);
+            num8.Click += new RoutedEventHandler(c.controlarBotones);
+            num9.Click += new RoutedEventHandler(c.controlarBotones);
+
+            //Botones que contienen signos de operaciones aritmeticas:
+
+
         }
        
 
