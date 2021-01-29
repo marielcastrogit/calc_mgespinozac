@@ -13,3 +13,7 @@ C:\Users\Usuario\Documents\C#\CalculadoraWPF\obj\Debug\CalculadoraWPF.csproj.Gen
 C:\Users\Usuario\Documents\C#\CalculadoraWPF\obj\Debug\CalculadoraWPF.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Documents\C#\CalculadoraWPF\obj\Debug\CalculadoraWPF.exe
 C:\Users\Usuario\Documents\C#\CalculadoraWPF\obj\Debug\CalculadoraWPF.pdb
+C:\Users\Usuario\Documents\C#\CalculadoraWPF\bin\Debug\AWSSDK.Core.dll
+C:\Users\Usuario\Documents\C#\CalculadoraWPF\bin\Debug\AWSSDK.Core.pdb
+C:\Users\Usuario\Documents\C#\CalculadoraWPF\bin\Debug\AWSSDK.Core.xml
+C:\Users\Usuario\Documents\C#\CalculadoraWPF\obj\Debug\CalculadoraWPF.csproj.CopyComplete
