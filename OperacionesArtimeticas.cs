@@ -5,11 +5,10 @@ namespace CalculadoraWPF
 {
     public class OperacionesAritmeticas
     {
-        public string[] getTerminos(TextBox textoBox)
+        public string[] getTerminos(String textoBox)
         {
-            string texto = textoBox.Text;
             char separador1 = '+';
-            string[] terminos = texto.Split(separador1);
+            string[] terminos = textoBox.Split(separador1);
 
             int numTerminos = terminos.Length;
             char separador2 = '=';
@@ -42,7 +41,7 @@ namespace CalculadoraWPF
 
                 for (int x = 0; x < puntos.Length; x++)
                 {
-                    if (puntos[i].Equals('.'))
+                    if (puntos[x].Equals('.'))
                     {
                         punto++;
                     }

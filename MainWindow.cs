@@ -58,6 +58,11 @@ namespace CalculadoraWPF
             num9.Click += new RoutedEventHandler(c.controlarBotones);
 
             //Botones que contienen signos de operaciones aritmeticas:
+            sumar.Click += new RoutedEventHandler(c.controlarBotones);
+            multiplicar.Click += new RoutedEventHandler(c.controlarBotones);
+            dividir.Click += new RoutedEventHandler(c.controlarBotones);
+            restar.Click += new RoutedEventHandler(c.controlarBotones);
+            igual.Click += new RoutedEventHandler(c.controlarBotones);
 
 
         }

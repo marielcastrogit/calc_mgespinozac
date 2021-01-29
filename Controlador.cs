@@ -13,6 +13,7 @@ namespace CalculadoraWPF
     {
         MainWindow window;
         String contenidoCaja = "";
+        int mas;
 
         public Controlador(MainWindow window)
         {
@@ -166,13 +167,44 @@ namespace CalculadoraWPF
                 contenidoCaja += window.num9.Content.ToString();
 
             }
-            window.txtBox.Text = (contenidoCaja);
 
-            //Eventos para los botones que tienen signos de operaciones aritmeticas
-            if (e.Source == window)
+
+            //Eventos para los botones que tienen signos de operaciones aritmeticas:
+            OperacionesAritmeticas oa = new OperacionesAritmeticas();
+            if (e.Source == window.sumar)
             {
+                contenidoCaja += window.sumar.Content.ToString();
+                mas = 0;
+                //char caracterBuscado = '+';
+                char[] termino = contenidoCaja.ToCharArray();
 
+                window.txtBox.Text = (oa.getSuma(oa.getTerminos(window.txtBox.Text)).ToString());
+                window.txtBlock.Text = contenidoCaja;
+                //for (int i = 0; i < termino.Length; i++)
+                //{
+                   
+                    //if (termino[i].Equals(caracterBuscado)) 
+                    //{
+                    //    mas++;
+                    //}
+                //}
             }
+            else
+            {
+                window.txtBox.Text = (contenidoCaja);
+            }
+            //if (mas == 2)
+            //{
+            //    window.txtBlock.Text = contenidoCaja;
+            //    if (e.Source == window.sumar)
+            //    {
+
+            //        window.txtBox.Text = (oa.getSuma(oa.getTerminos(window.txtBlock.Text)).ToString());
+            //    }
+            //}
+            //else { window.txtBox.Text = (contenidoCaja); }
+
+            
 
             if (e.Source == window)
             {
