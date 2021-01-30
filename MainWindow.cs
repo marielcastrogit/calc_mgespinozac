@@ -64,6 +64,10 @@ namespace CalculadoraWPF
             restar.Click += new RoutedEventHandler(c.controlarBotones);
             igual.Click += new RoutedEventHandler(c.controlarBotones);
 
+            //Botones que borran contenido:
+            borrarTodo.Click += new RoutedEventHandler(c.controlarBotones);
+            borrarReciente.Click += new RoutedEventHandler(c.controlarBotones);
+            borrarUltimoDigito.Click += new RoutedEventHandler(c.controlarBotones);
 
         }
        

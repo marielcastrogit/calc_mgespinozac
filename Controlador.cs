@@ -13,7 +13,6 @@ namespace CalculadoraWPF
     {
         MainWindow window;
         String contenidoCaja = "";
-        int mas;
 
         public Controlador(MainWindow window)
         {
@@ -35,10 +34,10 @@ namespace CalculadoraWPF
                 string caracteres = e.Text;
                 char[] caracter = caracteres.ToCharArray();
 
-                /*Segun el codigo ASCII para que sea una letra tiene que estar 
-                 entre 32 y 64 o entre 58 y 255*/
+                /*Segun el codigo ASCII*/
 
-                if ((caracter[0] >= 32 && caracter[0] <= 47) || (caracter[0] >= 58 && caracter[0] <= 255))
+                if ((caracter[0] >= 32 && caracter[0] <= 41) ||(caracter[0] ==44) || (caracter[0] >= 58 && caracter[0] <= 60) ||
+                    (caracter[0] >=62 && caracter[0] <=255))
                 {
                     e.Handled = true;
                 }
@@ -119,6 +118,7 @@ namespace CalculadoraWPF
             if (o == window.num0)
             {
                 contenidoCaja += window.num0.Content.ToString();
+
             }
 
             if (o == window.num1)
@@ -145,7 +145,7 @@ namespace CalculadoraWPF
             {
                 contenidoCaja += window.num5.Content.ToString();
             }
-            
+
 
             if (o == window.num6)
             {
@@ -174,41 +174,50 @@ namespace CalculadoraWPF
             if (e.Source == window.sumar)
             {
                 contenidoCaja += window.sumar.Content.ToString();
-                mas = 0;
-                //char caracterBuscado = '+';
-                char[] termino = contenidoCaja.ToCharArray();
-
                 window.txtBox.Text = (oa.getSuma(oa.getTerminos(window.txtBox.Text)).ToString());
                 window.txtBlock.Text = contenidoCaja;
-                //for (int i = 0; i < termino.Length; i++)
-                //{
-                   
-                    //if (termino[i].Equals(caracterBuscado)) 
-                    //{
-                    //    mas++;
-                    //}
-                //}
-            }
-            else
+
+            }else if (e.Source == window.restar)
             {
+                contenidoCaja += window.sumar.Content.ToString();
+                window.txtBox.Text = (oa.getResta(oa.getTerminos(window.txtBox.Text)).ToString());
+                window.txtBlock.Text = contenidoCaja;
+
+            } else if (e.Source == window.multiplicar)
+            {
+                contenidoCaja += window.sumar.Content.ToString();
+                window.txtBox.Text = (oa.getMultiplicacion(oa.getTerminos(window.txtBox.Text)).ToString());
+                window.txtBlock.Text = contenidoCaja;
+
+            }
+            else if(e.Source== window.num0 || e.Source == window.num1 || e.Source == window.num2 ||
+                e.Source == window.num3 || e.Source == window.num4 || e.Source == window.num5 || e.Source == window.num6 
+                || e.Source == window.num7 || e.Source == window.num8 || e.Source == window.num9)
+            {
+
                 window.txtBox.Text = (contenidoCaja);
+
             }
-            //if (mas == 2)
-            //{
-            //    window.txtBlock.Text = contenidoCaja;
-            //    if (e.Source == window.sumar)
-            //    {
-
-            //        window.txtBox.Text = (oa.getSuma(oa.getTerminos(window.txtBlock.Text)).ToString());
-            //    }
-            //}
-            //else { window.txtBox.Text = (contenidoCaja); }
-
-            
-
-            if (e.Source == window)
+            else if(e.Source == window.borrarUltimoDigito)
             {
+                if (window.txtBox.Text.Length > 0)
+                {
+                    window.txtBox.Text = window.txtBox.Text.Remove(window.txtBox.Text.Length - 1, 1);
+                    contenidoCaja = window.txtBox.Text;
+                }
+            }
 
+
+            if (e.Source == window.borrarTodo)
+            {
+                window.txtBlock.Text = "";
+                window.txtBox.Text = "";
+                contenidoCaja = "";
+            }
+
+            if (e.Source == window.borrarReciente)
+            {
+                window.txtBox.Text = "";
             }
         }
     }
