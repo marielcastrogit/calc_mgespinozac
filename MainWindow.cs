@@ -71,6 +71,8 @@ namespace CalculadoraWPF
 
             punto.Click += new RoutedEventHandler(c.controlarBotones);
 
+            
+
         }
        
 

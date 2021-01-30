@@ -13,7 +13,7 @@ namespace CalculadoraWPF
     {
         MainWindow window;
         string contenidoCaja = "";
-        string contenidoBlock = "";
+        string teclado = "";
 
         public Controlador(MainWindow window)
         {
@@ -37,15 +37,19 @@ namespace CalculadoraWPF
 
                 /*Segun el codigo ASCII*/
 
-                if ((caracter[0] >= 32 && caracter[0] <= 41) ||(caracter[0] ==44) || (caracter[0] >= 58 && caracter[0] <= 60) ||
-                    (caracter[0] >=62 && caracter[0] <=255))
+                if ((caracter[0] >= 32 && caracter[0] <= 41) || (caracter[0] == 44) || (caracter[0] >= 58 && caracter[0] <= 60) ||
+                    (caracter[0] >= 62 && caracter[0] <= 119) || (caracter[0] >= 121 && caracter[0] <= 255))
                 {
                     e.Handled = true;
+
+                
                 }
-                else
-                {
-                    e.Handled = false;
-                }
+                string letra = window.txtBox.Text;
+                teclado = teclado + letra;
+                window.txtBlock.Text = teclado;
+                window.txtBox.Text = "";
+
+
             }
 
         }
@@ -183,19 +187,19 @@ namespace CalculadoraWPF
             }else if (e.Source == window.restar)
             {
                 contenidoCaja += window.restar.Content.ToString();
-                window.txtBox.Text = (oa.getResta(oa.getTerminos(window.txtBox.Text)).ToString());
+                window.txtBox.Text = (oa.getResta(oa.getTerminos(window.txtBox.Text, '-')).ToString());
                 window.txtBlock.Text = contenidoCaja;
 
             } else if (e.Source == window.multiplicar)
             {
                 contenidoCaja += window.multiplicar.Content.ToString();
-                window.txtBox.Text = (oa.getMultiplicacion(oa.getTerminos(window.txtBox.Text)).ToString());
+                window.txtBox.Text = (oa.getMultiplicacion(oa.getTerminos(window.txtBox.Text, 'x')).ToString());
                 window.txtBlock.Text = contenidoCaja;
 
             }else if(e.Source == window.dividir)
             {
                 contenidoCaja += window.dividir.Content.ToString();
-                window.txtBox.Text = (oa.getDivision(oa.getTerminos(window.txtBox.Text)).ToString());
+                window.txtBox.Text = (oa.getDivision(oa.getTerminos(window.txtBox.Text, '÷')).ToString());
                 window.txtBlock.Text = contenidoCaja;
             }
             else if(e.Source== window.num0 || e.Source == window.num1 || e.Source == window.num2 ||
@@ -211,8 +215,43 @@ namespace CalculadoraWPF
                 window.txtBox.Text = (contenidoCaja);
             }else if(e.Source == window.igual)
             {
-                window.txtBlock.Text = window.txtBox.Text;
-                window.txtBox.Text = oa.getSuma(oa.getTerminos(window.txtBlock.Text)).ToString();
+                String contenidoBlock = window.txtBlock.Text;
+
+                char[] letras = contenidoBlock.ToCharArray();
+                
+
+                for(int i=0; i < letras.Length; i++)
+                {
+                    if (letras[i].Equals('+'))
+                    {
+                        window.txtBlock.Text = window.txtBox.Text;
+                        window.txtBox.Text = oa.getSuma(oa.getTerminos(window.txtBlock.Text, '+')).ToString();
+                    }
+
+                    if(letras[i].Equals('-'))
+                    {
+                        window.txtBlock.Text = window.txtBox.Text;
+                        window.txtBox.Text = oa.getResta(oa.getTerminos(window.txtBlock.Text, '-')).ToString();
+                    }
+
+                    if (letras[i].Equals('x'))
+                    {
+                        window.txtBlock.Text = window.txtBox.Text;
+                        window.txtBox.Text = oa.getMultiplicacion(oa.getTerminos(window.txtBlock.Text, 'x')).ToString();
+                    }
+
+                    if (letras[i].Equals('÷'))
+                    {
+                        window.txtBlock.Text = window.txtBox.Text;
+                        window.txtBox.Text = oa.getDivision(oa.getTerminos(window.txtBlock.Text, '÷')).ToString();
+                    }
+
+                    
+                }
+
+
+
+
             }
                 else if(e.Source == window.borrarUltimoDigito)
             {

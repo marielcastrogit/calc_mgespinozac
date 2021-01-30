@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Windows.Controls;
+using System.Windows.Forms;
 
 namespace CalculadoraWPF
 {
     public class OperacionesAritmeticas
     {
-        public string[] getTerminos(String textoBox)
+        public string[] getTerminos(String textoBox, char separador1)
         {
-            char separador1 = '+';
+            
             string[] terminos = textoBox.Split(separador1);
 
             int numTerminos = terminos.Length;
@@ -17,6 +18,7 @@ namespace CalculadoraWPF
 
             return terminos;
         }
+
 
         public double getSuma(string[] terminos)
         {
@@ -104,13 +106,13 @@ namespace CalculadoraWPF
         {
 
             int punto = 0;
-            double suma = 1;
+            double multiplicacion = 1;
             for (int i = 0; i < (terminos.Length); i++)
             {
 
                 try
                 {
-                    suma = suma * int.Parse(terminos[i]);
+                    multiplicacion = multiplicacion * int.Parse(terminos[i]);
                 }
                 catch (ArgumentNullException) { }
                 catch (FormatException) { }
@@ -132,11 +134,11 @@ namespace CalculadoraWPF
 
             if (punto > 0)
             {
-                return suma;
+                return multiplicacion;
             }
             else
             {
-                return Math.Round(suma);
+                return Math.Round(multiplicacion);
             }
 
         }
@@ -144,34 +146,21 @@ namespace CalculadoraWPF
         public double getDivision(string[] terminos)
         {
             double division =0.0;
-            int punto = 0;
-            
-            if (terminos.Length == 3)
+                        
+            if (terminos.Length == 2)
             {
-                division = double.Parse(terminos[0]) / double.Parse(terminos[1]);
-            }
-            
-            for (int i = 0; i < (terminos.Length); i++)
-            {
-                char[] puntos = terminos[i].ToCharArray();
-
-                for (int x = 0; x < puntos.Length; x++)
+                if (int.Parse(terminos[1]) != 0)
                 {
-                    if (puntos[x].Equals('.'))
-                    {
-                        punto++;
-                    }
+                    division = double.Parse(terminos[0]) / double.Parse(terminos[1]);
                 }
+                else
+                {
+                    MessageBox.Show("No se puede dividir entre 0");
+                }
+                
             }
-
-            if (punto > 0)
-            {
-                return division;
-            }
-            else
-            {
-                return Math.Round(division);
-            }
+            
+            return division;
         }
     }
 }
