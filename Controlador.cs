@@ -12,7 +12,8 @@ namespace CalculadoraWPF
     public class Controlador
     {
         MainWindow window;
-        String contenidoCaja = "";
+        string contenidoCaja = "";
+        string contenidoBlock = "";
 
         public Controlador(MainWindow window)
         {
@@ -144,12 +145,13 @@ namespace CalculadoraWPF
             if (o == window.num5)
             {
                 contenidoCaja += window.num5.Content.ToString();
+
             }
 
 
             if (o == window.num6)
             {
-                contenidoCaja += window.num6.Content.ToString();
+                contenidoCaja += window.num6.Content.ToString();   
             }
 
             if (o == window.num7)
@@ -173,22 +175,28 @@ namespace CalculadoraWPF
             OperacionesAritmeticas oa = new OperacionesAritmeticas();
             if (e.Source == window.sumar)
             {
+                
+                window.txtBox.Text = contenidoCaja;
                 contenidoCaja += window.sumar.Content.ToString();
-                window.txtBox.Text = (oa.getSuma(oa.getTerminos(window.txtBox.Text)).ToString());
                 window.txtBlock.Text = contenidoCaja;
 
             }else if (e.Source == window.restar)
             {
-                contenidoCaja += window.sumar.Content.ToString();
+                contenidoCaja += window.restar.Content.ToString();
                 window.txtBox.Text = (oa.getResta(oa.getTerminos(window.txtBox.Text)).ToString());
                 window.txtBlock.Text = contenidoCaja;
 
             } else if (e.Source == window.multiplicar)
             {
-                contenidoCaja += window.sumar.Content.ToString();
+                contenidoCaja += window.multiplicar.Content.ToString();
                 window.txtBox.Text = (oa.getMultiplicacion(oa.getTerminos(window.txtBox.Text)).ToString());
                 window.txtBlock.Text = contenidoCaja;
 
+            }else if(e.Source == window.dividir)
+            {
+                contenidoCaja += window.dividir.Content.ToString();
+                window.txtBox.Text = (oa.getDivision(oa.getTerminos(window.txtBox.Text)).ToString());
+                window.txtBlock.Text = contenidoCaja;
             }
             else if(e.Source== window.num0 || e.Source == window.num1 || e.Source == window.num2 ||
                 e.Source == window.num3 || e.Source == window.num4 || e.Source == window.num5 || e.Source == window.num6 
@@ -197,8 +205,16 @@ namespace CalculadoraWPF
 
                 window.txtBox.Text = (contenidoCaja);
 
+            }else if (e.Source == window.punto)
+            {
+                contenidoCaja += window.punto.Content.ToString();
+                window.txtBox.Text = (contenidoCaja);
+            }else if(e.Source == window.igual)
+            {
+                window.txtBlock.Text = window.txtBox.Text;
+                window.txtBox.Text = oa.getSuma(oa.getTerminos(window.txtBlock.Text)).ToString();
             }
-            else if(e.Source == window.borrarUltimoDigito)
+                else if(e.Source == window.borrarUltimoDigito)
             {
                 if (window.txtBox.Text.Length > 0)
                 {
@@ -206,6 +222,7 @@ namespace CalculadoraWPF
                     contenidoCaja = window.txtBox.Text;
                 }
             }
+
 
 
             if (e.Source == window.borrarTodo)

@@ -69,6 +69,8 @@ namespace CalculadoraWPF
             borrarReciente.Click += new RoutedEventHandler(c.controlarBotones);
             borrarUltimoDigito.Click += new RoutedEventHandler(c.controlarBotones);
 
+            punto.Click += new RoutedEventHandler(c.controlarBotones);
+
         }
        
 

@@ -140,5 +140,38 @@ namespace CalculadoraWPF
             }
 
         }
+
+        public double getDivision(string[] terminos)
+        {
+            double division =0.0;
+            int punto = 0;
+            
+            if (terminos.Length == 3)
+            {
+                division = double.Parse(terminos[0]) / double.Parse(terminos[1]);
+            }
+            
+            for (int i = 0; i < (terminos.Length); i++)
+            {
+                char[] puntos = terminos[i].ToCharArray();
+
+                for (int x = 0; x < puntos.Length; x++)
+                {
+                    if (puntos[x].Equals('.'))
+                    {
+                        punto++;
+                    }
+                }
+            }
+
+            if (punto > 0)
+            {
+                return division;
+            }
+            else
+            {
+                return Math.Round(division);
+            }
+        }
     }
 }
